@@ -1,13 +1,19 @@
-all:		servidor cliente
+all:		servidor admin agencia caixa
 
-cliente:	cliente.c const.h
-		@gcc -o cliente cliente.c
+caixa:		caixa.c const.h
+			@gcc -o caixa caixa.c
+
+agencia:	agencia.c const.h
+			@gcc -o agencia agencia.c
+
+admin:	   	admin.c const.h
+			@gcc -o admin admin.c
 
 servidor:	servidor.c const.h
-		@gcc -o servidor servidor.c
+			@gcc -o servidor servidor.c
 
 clean:
-		@rm -f cliente servidor *~
+		@rm -f caixa agencia admin servidor *~
 
 info:
-		@echo "(c) Roland Teodorowitsch (30 ago. 2013 - 31 mar. 2017)"
+		@echo "T1 Derick Garcez e Vinicius Azevedo"

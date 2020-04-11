@@ -1,4 +1,13 @@
-/* cliente.c (Roland Teodorowitsch; 30 ago. 2013 - 31 mar. 2017) */
+/*
+
+Processo Caixa Automático
+
+Solicita depósito, retirada e consulta de saldo em conta existente. As duas primeiras devem ser operações garantidamente não-idempotentes (semântica de execução exactely once) mesmo que ocorra algum erro na confirmação da operação (simular com injeção de falhas).
+
+
+*/
+
+
 
 #include <stdio.h>
 #include <rpc/rpc.h>

@@ -1,4 +1,10 @@
-/* cliente.c (Roland Teodorowitsch; 30 ago. 2013 - 31 mar. 2017) */
+/*
+Processo Administração
+
+ realiza abertura e fechamento de contas (para agências), e também autentica que contas já existem (tanto para agências e caixas automáticos). A abertura deve ser uma operação garantidamente não-idempotente (semântica de execução exactely once);
+
+
+*/
 
 #include <stdio.h>
 #include <rpc/rpc.h>
