@@ -8,15 +8,19 @@ int limite_contas = 100; // Limitei para que possa usar a estrutura de vector co
 int qnt_contas = 2;
 
 
+// Struct da Conta
 typedef struct {
 	int	num_conta;
 	double	saldo;
 } CONTAS;
 
+// Lista inicial de contas
 CONTAS lista_contas[limite_contas] = {
 	{00000001, 100.0},
 	{00000002, 20.0}
 };
+
+// ------ METODOS ------ 
 
 // Abertura de Conta
 int *abre_conta(){
@@ -40,7 +44,7 @@ int *abre_conta(){
                -2 -> Existe saldo na conta
 */
 int *fecha_conta(){
-	for(i=0;i<qnt_contas;++i)
+	for(i=0;i<qnt_contas;++i) //Processo de Procura da Conta, se a mesma existe ou não...
 		if(lista_contas[i].num_conta == *num_conta)
 			if(lista_contas[i].saldo == 0.0) //se não existir saldo
 				lista_contas == NULL:
@@ -58,7 +62,7 @@ double *obtem_saldo_conta_1_svc(int **num_conta)
 	static double erro = -1.0;
 	int i;
 
-	for	(i=0;i<qnt_contas;++i)
+	for(i=0;i<qnt_contas;++i) //Processo de Procura da Conta, se a mesma existe ou não...
 		if	(lista_contas[i].num_conta == *num_conta)
 			return &(lista_contas[i].saldo);
 	return &erro;
@@ -70,7 +74,7 @@ bool *obtem_conta_1_svc(int **num_conta)
 {
 	int i;
 
-	for	(i=0;i<qnt_contas;++i)
+	for(i=0;i<qnt_contas;++i) //Processo de Procura da Conta, se a mesma existe ou não...
 		if	(lista_contas[i].num_conta == *num_conta)
 			return true;
 	return false;
@@ -81,7 +85,7 @@ bool *deposito_conta_1_svc(int **num_conta, double **valor)
 {
 	int i;
 
-	for	(i=0;i<qnt_contas;++i)
+	for(i=0;i<qnt_contas;++i) //Processo de Procura da Conta, se a mesma existe ou não...
 		if	(lista_contas[i].num_conta == *num_conta)
 			*(lista_contas[i].saldo) = (&(lista_contas[i].saldo) + *valor) ; //Adiciona o valor do deposito na conta
 			return true;
@@ -93,9 +97,9 @@ bool *deposito_conta_1_svc(int **num_conta, double **valor)
 {
 	int i;
 
-	for	(i=0;i<qnt_contas;++i)
+	for(i=0;i<qnt_contas;++i) //Processo de Procura da Conta, se a mesma existe ou não...
 		if	(lista_contas[i].num_conta == *num_conta)
-			*(lista_contas[i].saldo) = (&(lista_contas[i].saldo) - *valor) ; //Adiciona o valor do deposito na conta
+			*(lista_contas[i].saldo) = (&(lista_contas[i].saldo) - *valor) ; //Adiciona o valor do saque na conta
 			return true;
 	return false;
 }
